@@ -1,0 +1,79 @@
+<% layout("layouts/boilerplate") -%>
+<body >
+    <form action="http://localhost:8080/listings" method="post" enctype="multipart/form-data" class="needs-validation">
+        <div class="row offset-2" >
+            <h1 class="mt-4">Create a New Listing</h1>
+            <div class="col-8">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <!--  if your server expects req.body.listing.title, the input field must have name="listing[title]" -->
+                    <input type="text" name="listing[title]" class= "form-control" required>
+                    <div class="invalid-feedback">
+                        Please provide a title.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+        
+                <div class="mb-3">
+                    <label  for="description" class="form-label">Description:</label>
+                    <textarea name="listing[description]" class= "form-control" required></textarea>
+                    <div class="invalid-feedback">
+                        Please provide a description.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+        
+                <div class="mb-3">
+                    <label  for="image" class="form-label">Image Upload:</label>
+                    <input type="file" name="listing[images]" class= "form-control" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                
+                <div class="row">
+                        <div class="mb-3 col-md-3">
+                            <label  for="price" class="form-label">Price:</label>
+                            <input type="text" name="listing[price]"  class= "form-control" required>
+                            <div class="invalid-feedback">
+                                Please provide a price.
+                            </div>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                
+                        <div class="mb-3 col-md-4">
+                            <label  for="location" class="form-label">Location:</label>
+                            <input type="text" name="listing[location]" class= "form-control" required>
+                            <div class="invalid-feedback">
+                                Please provide a location.
+                            </div>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                
+                        <div class="mb-3 col-md-5">
+                            <label  for="country" class="form-label">Country:</label>
+                            <input type="text" name="listing[country]" class= "form-control" required>
+                            <div class="invalid-feedback">
+                                Please provide a country.
+                            </div>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                </div>
+                <div class="mb-3 mt-5 "> 
+                    <button type="submit" class="btn btn-dark" >Create Listing</button>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+</body>

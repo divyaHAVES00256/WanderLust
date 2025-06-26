@@ -1,0 +1,102 @@
+<% layout("layouts/boilerplate") -%>
+<body>
+
+  <!-- Airbnb-like Filter Bar with Icons + Chevrons -->
+  <div class="container-fluid py-3 border-bottom sticky-top bg-white z-1 position-relative">
+    <!-- Filter icons scroll -->
+     <div class="filter-item">
+      <i class="bi bi-chevron-left fs-4" id="scrollLeft"></i>
+    </div>
+    <div class="d-flex overflow-auto gap-4 flex-nowrap text-center filter-scroll">
+      
+      <div class="filter-item">
+        <i class="bi bi-lightning-charge-fill"></i><div>OMG!</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-water"></i><div>Lakefront</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-house-door"></i><div>Tiny homes</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-fire"></i><div>Trending</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-tree-fill"></i><div>Treehouses</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-globe2"></i><div>Countryside</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-building"></i><div>Historical homes</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-bezier"></i><div>Beachfront</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-brightness-high"></i><div>Tropical</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-moon-stars"></i><div>Cabins</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-snow"></i><div>Arctic</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-flower1"></i><div>Vineyards</div>
+      </div>
+  
+      <div class="filter-item">
+        <i class="bi bi-sun"></i><div>Desert</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-building-fill-up"></i><div>Urban</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-flower2"></i><div>Gardens</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-wind"></i><div>Windmills</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-bicycle"></i><div>Adventure</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-stars"></i><div>Stargazing</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-droplet-half"></i><div>Hot Springs</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-building"></i><div>Mountains</div>
+      </div>
+      <div class="filter-item">
+        <i class="bi bi-flower3"></i><div>Nature</div>
+      </div>
+      
+    </div>
+    <div class="filter-item">
+      <i class="bi bi-chevron-right fs-4" id="scrollRight"></i>
+    </div>
+  </div>
+
+  <!-- Listings Grid -->
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 px-3 mt-4">
+    <% for(let list of listings) { %>
+      <a href="/listings/<%= list.id %>" class="listing-link">
+        <div class="card col">
+          <img src="<%= list.images.url %>" class="card-img-top" alt="/listing image">
+          <div class="card-img-overlay">
+            <h4 style="font-size: 2rem">&#x2665;</h4>
+          </div>
+          <div class="card-body">
+            <b><p class="card-text"><%= list.location %>, <%= list.country %></p></b>
+            <p class="card-text"><%= list.title %></p>
+            <p class="card-text">&#8377;<%= list.price.toLocaleString("en-IN") %> night</p>
+          </div>
+        </div>
+      </a>
+    <% } %>
+  </div>
+
+</body>

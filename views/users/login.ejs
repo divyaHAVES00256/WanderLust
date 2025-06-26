@@ -1,0 +1,30 @@
+<% layout("layouts/boilerplate") -%>
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-3 w-100" style="max-width: 500px; border-radius: 20px;">
+        <h2 class="text-center mb-4">Log In to Your Account</h2>
+
+        <form action="http://localhost:8080/users/login" method="POST" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+                <div class="invalid-feedback">Please enter your username.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+                <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+                <button type="submit" class="btn w-100 btn-airbnb">Log In</button>
+            </div>
+
+            <p class="text-center mt-3 mb-0">
+                Don’t have an account?
+                <a href="/users/signup" class="text-decoration-none">Sign up</a>
+            </p>
+        </form>
+    </div>
+</div>

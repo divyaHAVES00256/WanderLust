@@ -1,0 +1,129 @@
+<% layout("layouts/boilerplate") -%>
+
+<body>
+    <div class=" row card mt-5 ">
+        <div class="col-8 offset-2" style="padding: 0;">
+
+            <h1><%=listing.title%></h1>
+
+            <div class="col-12">
+                <img src="<%=listing.images.url%>" class="card-img-top show-listing-img" alt="image">
+            </div>
+
+            <div class="card-body">
+                <p class="card-text">Owner : <%= listing.owner && listing.owner.username ? listing.owner.username : "Unknown" %></p> 
+                <b><p class="card-text"><%=listing.location%>, <%=listing.country%></p></b>
+                <p class="card-text"><%=listing.description%></p>
+                <p class="card-text mt-2">&#8377;<%=listing.price.toLocaleString("en-IN")%> night</p>
+
+                <div class="row mt-5" >
+                    <!-- if curruser exist and equals to owner , then show these buttons -->
+                    
+                        <div class="mb-3 col-md-3">
+                            <a href="/listings/edit/<%=listing.id%>" class="btn btn-airbnb">Edit</a>
+                        </div>
+                
+                        <div class="mb-3 col-md-4">
+                            <form action="/listings/<%=listing.id%>?_method=delete" method="post">
+                                <button class="btn btn-dark">Delete</button>
+                            </form>
+                        </div>
+                </div>   
+            </div>
+
+        </div>
+
+    </div>
+    
+
+    <!-- Separator -->
+    <hr class="my-5" style="border-top: 2px dashed #605b5b; width: 80%; margin: 3rem auto;">
+
+    <!-- Create Review Form -->
+    <!-- Review Form -->
+<% if(currentUser) { %>
+    <div class="row mt-5">
+        <div class="col-8 offset-2">
+            <h3>Leave a Review</h3>
+            <form action="/listings/<%= listing.id %>/reviews" method="POST" novalidate class="needs-validation">
+                
+                <div class="mb-3">
+                    <label for="rating" class="form-label">Rating (1 to 10)</label>
+                    <div class="star-rating d-flex flex-row-reverse justify-content-start">
+                        <% for (let i = 10; i >= 1; i--) { %>
+                            <input type="radio" id="star<%= i %>" name="review[rating]" value="<%= i %>" required />
+                            <label for="star<%= i %>" title="<%= i %> stars">&#9733;</label>
+                        <% } %>
+                    </div>
+                    <div class="invalid-feedback">Please select a rating.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment</label>
+                    <textarea class="form-control" id="comment" name="review[comment]" rows="3" required></textarea>
+                    <div class="invalid-feedback">Please add a comment.</div>
+                </div>
+
+                <button type="submit" class="btn btn-airbnb">Submit Review</button>
+            </form>
+        </div>
+    </div>
+<% } %>
+
+<!-- show reviews here -->
+<div class="row mt-5 mb-5">
+    <div class="col-8 offset-2">
+        <h3 class="mb-4 fw-bold">★ Guest Reviews</h3>
+
+        <% if (listing.reviews.length === 0) { %>
+            <p class="text-muted">No reviews yet. Be the first to leave one!</p>
+        <% } else { %>
+            <% listing.reviews.forEach(function(review) { %>
+                <div class="mb-4 p-3 rounded-4 shadow-sm border bg-white">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <div class="fw-semibold"><%= review.author.username%></div>
+                        <div class="text-muted" style="font-size: 0.9rem; white-space: nowrap;">
+                            <%= new Date(review.createdAt).toLocaleDateString("en-IN", { year: 'numeric', month: 'short', day: 'numeric' }) %>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-1 text-warning">
+                    <% for(let i = 1; i >= 10; i--) { %>
+                        <% if(i <= review.rating) { %>
+                            <span>&#9733;</span> <!-- filled star -->
+                        <% } else { %>
+                            <span style="color: #ddd;">&#9733;</span> <!-- empty star -->
+                        <% } %>
+                    <% } %>
+                    <span class="text-muted">⭐ (<%= review.rating %>/10)</span>
+                </div>
+
+                    <p class="text-dark mb-3"><%= review.comment %></p>
+
+                    <!-- delete button at bottom -->
+                    <form action="/listings/<%= listing.id %>/reviews/<%= review.id %>?_method=DELETE" method="POST">
+
+                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                </div>
+            <% }) %>
+        <% } %>
+    </div>
+</div>
+
+
+
+    <!-- <div class="mt-5">
+        <h3 class="mb-3 fw-bold">Reviews</h3>
+        <div style="background-color: #f4efef; padding: 20px; border-radius: 10px;">
+            <% for (let i = 0; i < listing.reviews.length; i++) { %>
+                <div style="background-color: #fff; padding: 15px; margin-bottom: 15px; border-radius: 8px;">
+                    <h5 style="color: #721c24;">Comment: <%= listing.reviews[i].comment %></h5>
+                    <h6 style="color: #721c24;">Rating: <%= listing.reviews[i].rating %>/10</h6>
+                    <p style="font-size: 0.9rem; color: #6c757d;">Posted on: <%= new Date(listing.reviews[i].createdAt).toLocaleDateString("en-IN", { year: 'numeric', month: 'short', day: 'numeric' }) %></p>
+                </div>
+            <% } %>
+        </div>
+    </div> -->
+
+</body>

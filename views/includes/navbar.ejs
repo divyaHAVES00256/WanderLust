@@ -1,0 +1,66 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+    <button 
+      class="navbar-toggler"
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/listings/new">WanderLust</a>
+        </div>
+        <% if(!currentUser) { %>
+          <a class="nav-link" href="/users/signup"><b>SignUp</b></a>
+          <a class="nav-link" href="/users/login"><b>Login</b></a>
+        <% } else { %>
+          <a class="nav-link" href="/users/profile"><i class="fa-solid fa-user"></i> <%= currentUser.username %></a>
+          <a class="nav-link" href="/users/logout"><b>Logout</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Airbnb-style Search Bar -->
+<div class="search-bar-container d-flex justify-content-center my-4">
+  <form class="search-bar d-flex align-items-center rounded-pill shadow px-3 py-2" action="/listings" method="GET">
+    <div class="input-group px-3 border-end">
+      <div class="d-flex flex-column">
+        <label class="fw-bold text-muted small mb-1">Where</label>
+        <input type="text" name="location" class="form-control border-0 p-0" placeholder="Search destinations">
+      </div>
+    </div>
+    <div class="input-group px-3 border-end">
+      <div class="d-flex flex-column">
+        <label class="fw-bold text-muted small mb-1">Check in</label>
+        <input type="date" name="checkin" class="form-control border-0 p-0">
+      </div>
+    </div>
+    <div class="input-group px-3 border-end">
+      <div class="d-flex flex-column">
+        <label class="fw-bold text-muted small mb-1">Check out</label>
+        <input type="date" name="checkout" class="form-control border-0 p-0">
+      </div>
+    </div>
+    <div class="input-group px-3">
+      <div class="d-flex flex-column">
+        <label class="fw-bold text-muted small mb-1">Who</label>
+        <input type="number" name="guests" class="form-control border-0 p-0" placeholder="Add guests" min="1">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-danger rounded-circle ms-3">
+      <i class="fa fa-search"></i>
+    </button>
+  </form>
+</div>
+

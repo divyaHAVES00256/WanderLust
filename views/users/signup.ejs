@@ -1,0 +1,36 @@
+<% layout("layouts/boilerplate") -%>
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-3 w-100" style="max-width: 500px; border-radius: 20px;">
+        <h2 class="text-center mb-4">Create Your Account</h2>
+
+        <form action="http://localhost:8080/users/signup" method="POST" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" name="user[username]" class="form-control" required>
+                <div class="invalid-feedback">Please provide a username.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" id="email" name="user[email]" class="form-control" required>
+                <div class="invalid-feedback">Please provide a valid email.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="user[password]" class="form-control" required>
+                <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+                <button type="submit" class="btn w-100 btn-airbnb">Sign Up</button>
+            </div>
+
+            <p class="text-center mt-3 mb-0">
+                Already have an account?
+                <a href="/users/login" class="text-decoration-none">Log in</a>
+            </p>
+        </form>
+    </div>
+</div>

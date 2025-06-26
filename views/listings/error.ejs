@@ -1,0 +1,8 @@
+<% layout("layouts/boilerplate") -%>
+<div class="error-wrapper">
+    <div class="error-box">
+        <img src="/images/error-illustration.png" alt="Error Illustration" class="error-image" />
+        <p><%= err.message %></p>
+        <button onclick="window.location.href='/listings'">Back to Home</button>
+    </div>
+</div>
