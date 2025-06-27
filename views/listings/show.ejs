@@ -22,7 +22,7 @@
                         <div class="mb-3 col-md-3">
                             <a href="/listings/edit/<%=listing.id%>" class="btn btn-airbnb">Edit</a>
                         </div>
-                <% if (currentUser && listing.owner && currentUser._id.toString() === listing.owner._id.toString()) { %>
+                <% if (currentUser && currentUser._id.equals(listing.owner._id)) { %>
                         <div class="mb-3 col-md-4">
                             <form action="/listings/<%=listing.id%>?_method=delete" method="post">
                                 <button class="btn btn-dark">Delete</button>
@@ -30,7 +30,7 @@
                         </div>
                 <% } %>
                     <!-- if curruser exist and equals to owner , then show these buttons -->
-                     
+
                 </div>   
             </div>
 
