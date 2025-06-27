@@ -22,12 +22,6 @@
                         <div class="mb-3 col-md-3">
                             <a href="/listings/edit/<%=listing.id%>" class="btn btn-airbnb">Edit</a>
                         </div>
-
-                        <%=listing.owner._id%>
-                        <%=currentUser._id%>
-                        <%=currentUser._id.equals(listing.owner._id)%>
-                        <%=currentUser && currentUser._id.equals(listing.owner._id)%>
-
                 
                         <div class="mb-3 col-md-4">
                             <form action="/listings/<%=listing.id%>?_method=delete" method="post">

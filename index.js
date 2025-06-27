@@ -93,7 +93,7 @@ app.use((req, res, next) => {
 
 // routes
 app.get("/", (req, res) => {
-  res.send("WanderLust");
+  res.redirect("/listings");
 });
 app.use("/listings", listing);
 app.use("/listings/:id/reviews", review);
