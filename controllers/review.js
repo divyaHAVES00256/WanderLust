@@ -26,7 +26,7 @@ const destroyReview = (
         await Listing.findByIdAndUpdate(id, {$pull:{reviews: reviewId}}); //remove review from listing collection
         await Review.findByIdAndDelete(reviewId); //delete review from review collection
 
-         req.flash("success", "Review deleted successfully!"); 
+        req.flash("success", "Review deleted successfully!"); 
         res.redirect(`/listings/${id}`); //redirect review data to show page/ where listing now have reviews
     }
 )

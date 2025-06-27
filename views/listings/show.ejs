@@ -22,13 +22,19 @@
                         <div class="mb-3 col-md-3">
                             <a href="/listings/edit/<%=listing.id%>" class="btn btn-airbnb">Edit</a>
                         </div>
-                <% if (currentUser && currentUser._id.equals(listing.owner._id)) { %>
+
+                        <%=listing.owner._id%>
+                        <%=currentUser._id%>
+                        <%=currentUser._id.equals(listing.owner._id)%>
+                        <%=currentUser && currentUser._id.equals(listing.owner._id)%>
+
+                
                         <div class="mb-3 col-md-4">
                             <form action="/listings/<%=listing.id%>?_method=delete" method="post">
                                 <button class="btn btn-dark">Delete</button>
                             </form>
                         </div>
-                <% } %>
+               
                     <!-- if curruser exist and equals to owner , then show these buttons -->
 
                 </div>   
@@ -104,29 +110,14 @@
                     <p class="text-dark mb-3"><%= review.comment %></p>
 
                     <!-- delete button at bottom -->
-                    <form action="/listings/<%= listing.id %>/reviews/<%= review.id %>?_method=DELETE" method="POST">
-
-                        <button class="btn btn-sm btn-outline-danger">Delete</button>
-                    </form>
+                     <% if (currentUser && review.author && currentUser._id.equals(review.author._id)) { %>
+                        <form action="/listings/<%= listing.id %>/reviews/<%= review.id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                        </form>
+                    <% } %>
                 </div>
             <% }) %>
         <% } %>
     </div>
 </div>
-
-
-
-    <!-- <div class="mt-5">
-        <h3 class="mb-3 fw-bold">Reviews</h3>
-        <div style="background-color: #f4efef; padding: 20px; border-radius: 10px;">
-            <% for (let i = 0; i < listing.reviews.length; i++) { %>
-                <div style="background-color: #fff; padding: 15px; margin-bottom: 15px; border-radius: 8px;">
-                    <h5 style="color: #721c24;">Comment: <%= listing.reviews[i].comment %></h5>
-                    <h6 style="color: #721c24;">Rating: <%= listing.reviews[i].rating %>/10</h6>
-                    <p style="font-size: 0.9rem; color: #6c757d;">Posted on: <%= new Date(listing.reviews[i].createdAt).toLocaleDateString("en-IN", { year: 'numeric', month: 'short', day: 'numeric' }) %></p>
-                </div>
-            <% } %>
-        </div>
-    </div> -->
-
 </body>
