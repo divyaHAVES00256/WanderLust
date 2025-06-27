@@ -66,9 +66,8 @@ const renderEditForm = async(req, res, next) => {
         return res.redirect("/listings");
     }
     let originalImage = listing.images.url; 
-    console.log(originalImage); //check the image url
+    
     originalImage = originalImage.replace("/upload", "/upload/c_scale,w_250"); //scale the image to 500px width for better view in edit form
-    console.log(originalImage); //check the image url
     
     res.render("listings/edit.ejs", {listing, originalImage}); 
 };
