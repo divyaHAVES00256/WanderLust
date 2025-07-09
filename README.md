@@ -42,8 +42,11 @@ Follow these steps to get Wanderlust running locally:
 git clone https://github.com/divyaHAVES00256/wanderlust.git
 cd wanderlust
 
+### 2. Install Dependencies
 cd frontend && npm install   # Or yarn install
 cd ../backend && npm install # Or yarn install
+
+### 3. Configure Environment Variables
 
 DB_URI=your_mongodb_connection_string
 MAPBOX_API_KEY=your_mapbox_api_key
@@ -52,13 +55,14 @@ CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 SESSION_SECRET=a_long_random_string_for_session_secret
 
+### 4. Run the Application
 cd backend && npm start
 # In a new terminal window/tab:
 cd frontend && npm start
 
-Access the app at: http://localhost:8080
+Access the app at:  `http://localhost:8080`
 
-💡 Usage
+### 💡 Usage
 🔑 Sign Up / Log In — Create an account or sign in
 
 🌍 Discover — Browse destinations and listings
@@ -67,7 +71,7 @@ Access the app at: http://localhost:8080
 
 🗺️ Visualize — View plans on an interactive map
 
-🔄 Future Enhancements
+### 🔄 Future Enhancements
 We’re actively working on:
 
 🔍 Advanced Filtering — Robust filters for listings and destinations
@@ -76,11 +80,11 @@ We’re actively working on:
 
 💬 User-Driven Features — Feedback-based iteration and new tools
 
-🤝 Contributing
+### 🤝 Contributing
 We welcome all contributions!
 Fork the repo → create a feature branch → make your changes → open a PR.
 
-📧 Contact
+### 📧 Contact
 Divya
 GitHub Profile
 📩 divyansut00256@gmail.com
