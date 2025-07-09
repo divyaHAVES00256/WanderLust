@@ -16,7 +16,7 @@ Image Uploads: Easily upload and manage images.
 Community & Sharing: Connect with other travelers and share itineraries.
 
 🚀 **Technologies Used**
-Frontend: ```Bootstrap, CSS, JavaScript (ES6+)
+Frontend:`Bootstrap`, `CSS`, `JavaScript (ES6+)`
 
 Backend: Node.js with Express.js, MongoDB (Mongoose), EJS, Cloudinary (image storage), Passport.js (authentication)
 
