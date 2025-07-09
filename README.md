@@ -52,8 +52,11 @@ cd wanderlust
 
 
 ### 2. Install Dependencies
+
+```bash
 cd frontend && npm install   # Or yarn install
 cd ../backend && npm install # Or yarn install
+```
 
 ---
 
@@ -72,9 +75,11 @@ SESSION_SECRET=a_long_random_string_for_session_secret
 
 
 ### 4. Run the Application
-cd backend && npm start
 
+```bash
+cd backend && npm start
 cd frontend && npm start
+```
 
 Access the app at:  `http://localhost:8080`
 
