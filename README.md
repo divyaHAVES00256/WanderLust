@@ -1,10 +1,15 @@
 # 🌍 WANDERLUST — An Airbnb Clone *(Work in Progress)*  
 _Explore the World, One Journey at a Time_
 
-![GitHub Repo Stars](https://img.shields.io/github/stars/divyaHAVES00256/wanderlust?style=social)
-![GitHub forks](https://img.shields.io/github/forks/divyaHAVES00256/wanderlust?style=social)
+![GitHub top language](https://img.shields.io/github/languages/top/divyaHAVES00256/wanderlust)
+![GitHub language count](https://img.shields.io/github/languages/count/divyaHAVES00256/wanderlust)
+![GitHub repo size](https://img.shields.io/github/repo-size/divyaHAVES00256/wanderlust)
 ![GitHub last commit](https://img.shields.io/github/last-commit/divyaHAVES00256/wanderlust)
-![License](https://img.shields.io/badge/license-MIT-green)
+
+![GitHub stars](https://img.shields.io/github/stars/divyaHAVES00256/wanderlust?style=social)
+![GitHub forks](https://img.shields.io/github/forks/divyaHAVES00256/wanderlust?style=social)
+![GitHub contributors](https://img.shields.io/github/contributors/divyaHAVES00256/wanderlust)
+![GitHub issues](https://img.shields.io/github/issues/divyaHAVES00256/wanderlust)
 
 ---
 
@@ -41,37 +46,42 @@ Follow these steps to get Wanderlust running locally:
 ```bash
 git clone https://github.com/divyaHAVES00256/wanderlust.git
 cd wanderlust
-2. Install Dependencies
-bash
-Copy
-Edit
+```
+
+---
+
+
+### 2. Install Dependencies
 cd frontend && npm install   # Or yarn install
 cd ../backend && npm install # Or yarn install
-3. Configure Environment Variables
-Create a .env file in the backend directory:
 
-env
-Copy
-Edit
+---
+
+
+### 3. Configure Environment Variables
+
+```bash
 DB_URI=your_mongodb_connection_string
 MAPBOX_API_KEY=your_mapbox_api_key
 CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 SESSION_SECRET=a_long_random_string_for_session_secret
-4. Run the Application
-bash
-Copy
-Edit
-cd backend && npm start
-bash
-Copy
-Edit
-# In a new terminal window/tab:
-cd frontend && npm start
-Access the app at: http://localhost:8080
+```
+---
 
-💡 Usage
+
+### 4. Run the Application
+cd backend && npm start
+
+cd frontend && npm start
+
+Access the app at:  `http://localhost:8080`
+
+---
+
+
+### 💡 Usage
 🔑 Sign Up / Log In — Create an account or sign in
 
 🌍 Discover — Browse destinations and listings
@@ -80,7 +90,10 @@ Access the app at: http://localhost:8080
 
 🗺️ Visualize — View plans on an interactive map
 
-🔄 Future Enhancements
+---
+
+
+### 🔄 Future Enhancements
 We’re actively working on:
 
 🔍 Advanced Filtering — Robust filters for listings and destinations
@@ -89,17 +102,18 @@ We’re actively working on:
 
 💬 User-Driven Features — Feedback-based iteration and new tools
 
-🤝 Contributing
-We welcome all contributions!
+---
 
-bash
-Copy
-Edit
-# Fork the repo
-# Create a feature branch
-# Make your changes
-# Open a Pull Request
-📧 Contact
-Divyanshu Tiwari
-🔗 GitHub Profile
+
+### 🤝 Contributing
+We welcome all contributions!
+Fork the repo → create a feature branch → make your changes → open a PR.
+
+---
+### 📧 Contact
+
+Vivi_DIVYA
+
+👉 [GitHub Profile](https://github.com/divyaHAVES00256)
+
 📩 divyansut00256@gmail.com
