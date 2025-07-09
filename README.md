@@ -56,3 +56,32 @@ cd backend && npm start
 # In a new terminal window/tab:
 cd frontend && npm start
 
+Access the app at: http://localhost:8080
+
+💡 Usage
+🔑 Sign Up / Log In — Create an account or sign in
+
+🌍 Discover — Browse destinations and listings
+
+🗓️ Plan & Build — Organize trips, create itineraries & journal entries
+
+🗺️ Visualize — View plans on an interactive map
+
+🔄 Future Enhancements
+We’re actively working on:
+
+🔍 Advanced Filtering — Robust filters for listings and destinations
+
+🚀 Scalability Improvements — Optimize performance and handle more users
+
+💬 User-Driven Features — Feedback-based iteration and new tools
+
+🤝 Contributing
+We welcome all contributions!
+Fork the repo → create a feature branch → make your changes → open a PR.
+
+📧 Contact
+Divya
+GitHub Profile
+📩 divyansut00256@gmail.com
+
