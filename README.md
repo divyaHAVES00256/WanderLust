@@ -35,4 +35,53 @@ cd wanderlust`
    ```bash
    cd frontend && npm install  # Or yarn install
    cd ../backend && npm install # Or yarn install
+   
+3. Configure environment variables:
 
+Create a `.env` file in your `backend` directory.
+
+Add your database connection string, API keys (Mapbox/Google Maps, Cloudinary), and a session secret.
+
+   ```bash
+   DB_URI=your_mongodb_connection_string
+   MAPBOX_API_KEY=your_mapbox_api_key
+   CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+   CLOUDINARY_API_KEY=your_cloudinary_api_key
+   CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+   SESSION_SECRET=a_long_random_string_for_session_secret
+
+4. **Run the application:**
+
+Start backend: `cd backend && npm start`
+
+Start frontend: `cd ../frontend && npm start`
+
+Access the application at `http://localhost:8080`.
+
+💡 **Usage**
+
+Sign Up/Log In: Create an account or log in.
+
+Discover: Explore destinations and listings.
+
+Plan & Build: Create trips, itineraries, and journal entries.
+
+Visualize: View plans on the interactive map.
+
+🔄 **Future Enhancements (Work in Progress)**
+
+We are actively working on:
+
+Advanced Filtering: Implementing robust search and filtering options for destinations/listings.
+
+Scalability Improvements: Optimizing the application to handle a larger number of users and data.
+
+Further feature development based on user feedback.
+
+🤝 **Contributing**
+We welcome contributions! Please fork the repository, create a branch, make your changes, and open a Pull Request.
+
+📧 **Contact**
+For any questions, reach out to:
+
+Your Name: (https://github.com/divyaHAVES00256) / divyansut00256@gmail.com
