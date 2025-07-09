@@ -26,6 +26,7 @@ Other Tools: `Git` & `GitHub`, `dotenv`, `connect-flash`, `express-session`, `jo
 Follow these steps to get Wanderlust running locally:
 
 1. Clone the repository:
+
    `git clone [https://github.com/your-username/wanderlust.git](https://github.com/your-username/wanderlust.git)
 cd wanderlust`
 2. Install dependencies:
