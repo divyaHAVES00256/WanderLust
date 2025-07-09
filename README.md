@@ -50,6 +50,7 @@ Add your database connection string, API keys (Mapbox/Google Maps, Cloudinary), 
    CLOUDINARY_API_SECRET=your_cloudinary_api_secret
    SESSION_SECRET=a_long_random_string_for_session_secret
 
+
 4. **Run the application:**
 
 Start backend: `cd backend && npm start`
